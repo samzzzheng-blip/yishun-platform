@@ -7,5 +7,5 @@
   "miniapps": "Source archived; no fresh upload or release in this task",
   "secrets": "Staged-source Gitleaks v8.30.1 scan: zero findings before final documentation update",
   "dependencies": "Reused local dependencies; clean installation not verified",
-  "github": "Awaiting user GitHub authentication"
+  "github": "Target: https://github.com/samzzzheng-blip/yishun-platform; public publication explicitly authorized by owner"
 }
