@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- 让 Logback 能访问 Spring 的环境属性 -->
+    <springProperty scope="context" name="springProfile" source="spring.profiles.active"/>
+
+    <!-- 定义日志路径 -->
+    <springProfile name="dev">
+        <property name="LOG_PATH" value="./logs"/>
+    </springProfile>
+    <springProfile name="prod">
+        <property name="LOG_PATH" value="D:/project/logs"/>
+    </springProfile>
+
+    <property name="APP_NAME" value="app"/>
+    <property name="LOG_FILE" value="${LOG_PATH}/${APP_NAME}.log"/>
+
+    <!-- 控制台输出 -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 文件输出（带滚动） -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- 文件名格式：app-2025-11-06.0.log、app-2025-11-06.1.log -->
+            <fileNamePattern>${LOG_PATH}/${APP_NAME}-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <!-- 保留7天日志 -->
+            <maxHistory>7</maxHistory>
+            <!-- 文件大小触发策略 -->
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>50MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- ✅ 区分环境 -->
+    <!-- 开发环境：只打印到控制台 -->
+    <springProfile name="dev">
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+    </springProfile>
+
+    <!-- 生产环境：打印到文件 -->
+    <springProfile name="prod">
+        <!-- 输出等级是INFO、WARM、ERROR, 不含DEBUG -->
+        <root level="INFO">
+            <appender-ref ref="FILE"/>
+        </root>
+        <!-- sql打到日志-->
+        <logger name="org.hibernate.SQL" level="DEBUG" additivity="false">
+            <appender-ref ref="FILE"/>
+        </logger>
+    </springProfile>
+</configuration>

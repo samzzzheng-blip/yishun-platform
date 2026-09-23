@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-10T07:33:14.073Z",
+  "title": "Design System: 一瞬评级工作台",
+  "extensions": {
+    "breakpoints": [
+      { "name": "grading-compact", "value": "900px" },
+      { "name": "grading-mobile", "value": "640px" }
+    ],
+    "shadows": [
+      { "name": "selected-row-edge", "value": "inset 3px 0 #1674bb", "purpose": "Selection marker, not elevation." }
+    ],
+    "motion": [
+      { "name": "primary-button", "value": "box-shadow .2s,border-color .2s", "purpose": "Enabled background updates immediately after intake upload." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ant Design primary action; loading and disabled states remain library-owned.",
+      "html": "<button class=\"ds-primary\">保存档案并继续收卡</button>",
+      "css": ".ds-primary{background:#1890ff;color:white;border:1px solid #1890ff;border-radius:4px;padding:0 15px;height:32px;font-size:14px;cursor:pointer;transition:box-shadow .2s,border-color .2s}.ds-primary:hover{background:#40a9ff;border-color:#40a9ff}.ds-primary:active{background:#096dd9;border-color:#096dd9}.ds-primary:focus-visible{outline:2px solid #1674bb;outline-offset:3px}.ds-primary:disabled{background:#f5f5f5;border-color:#d9d9d9;color:rgba(0,0,0,.25);cursor:not-allowed}"
+    },
+    {
+      "name": "Stage filter",
+      "kind": "nav",
+      "description": "Scrollable workflow filtering with a pressed state.",
+      "html": "<button class=\"ds-stage\" aria-pressed=\"true\">待整理</button>",
+      "css": ".ds-stage{border:1px solid #c5ced7;background:white;border-radius:4px;padding:10px 16px;color:#354959;cursor:pointer}.ds-stage[aria-pressed=true]{background:#203342;color:white;border-color:#203342}.ds-stage:focus-visible{outline:2px solid #1674bb;outline-offset:3px}"
+    },
+    {
+      "name": "Text field",
+      "kind": "input",
+      "description": "Labeled Ant Design field, with workbench keyboard outline.",
+      "html": "<label class=\"ds-field\">收卡批次<input placeholder=\"例如：9月10日第一批\"></label>",
+      "css": ".ds-field{display:block;color:#263746;font:14px sans-serif}.ds-field input{display:block;margin-top:7px;width:220px;height:32px;padding:4px 11px;border:1px solid #d9d9d9;border-radius:4px;font-size:14px}.ds-field input:hover{border-color:#40a9ff}.ds-field input:focus-visible{outline:2px solid #1674bb;outline-offset:3px;border-color:#40a9ff}"
+    },
+    {
+      "name": "Status tag",
+      "kind": "chip",
+      "description": "Existing Ant Design blue status tag; informational, not interactive.",
+      "html": "<span class=\"ds-tag\">待整理</span>",
+      "css": ".ds-tag{display:inline-block;padding:0 7px;font:12px/20px sans-serif;background:#e6f7ff;color:#1890ff;border:1px solid #91d5ff;border-radius:4px}"
+    },
+    {
+      "name": "Workbench panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Flat bordered container shared by list and detail regions.",
+      "html": "<section class=\"ds-panel\">卡片信息</section>",
+      "css": ".ds-panel{background:white;border:1px solid #d9e0e7;border-radius:5px;padding:20px;color:#263746;font:14px sans-serif}"
+    }
+  ],
+  "narrative": {
+    "overview": "This record covers the implemented grading workbench and the existing Ant Design 3 administration conventions it inherits. It does not replace the visual identity of other routes. White panels, dark text, blue actions, visible labels, and compact spacing support repeated employee tasks. No new brand metaphor was established.",
+    "dos": [
+      "Do preserve the existing administration identity and Ant Design control behavior.",
+      "Do keep selection, workflow state, and keyboard focus visibly distinct.",
+      "Do preserve full card images and readable, wrapping identifiers."
+    ],
+    "donts": [
+      "Don't propagate grading-specific layout or print measurements as global design rules.",
+      "Don't print navigation, dialogs, notifications, or editing controls with a label."
+    ]
+  }
+}

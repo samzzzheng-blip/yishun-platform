@@ -1,0 +1,3 @@
+com.techtron.onebook.framework.mq.redis.config.OnebookRedisMQProducerAutoConfiguration
+com.techtron.onebook.framework.mq.redis.config.OnebookRedisMQConsumerAutoConfiguration
+com.techtron.onebook.framework.mq.rabbitmq.config.OnebookRabbitMQAutoConfiguration

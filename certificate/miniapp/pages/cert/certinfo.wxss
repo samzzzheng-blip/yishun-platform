@@ -1,0 +1,86 @@
+/* pages/account/aboutus/aboutus.wxss */
+.search-input-container {
+  position:relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+  margin-bottom: 40rpx;
+  margin-top: 40rpx;
+}
+.search-input{
+  width: 200rpx;
+  border: 1px #cccccc solid;
+  border-radius: 8px;
+  padding-left: 10px;
+  color: #333333;
+  height: 40rpx;
+  z-index: 2;
+}
+.searchImg {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 10rpx;
+  z-index: 2;
+}
+.searchContainer {
+  background-color:white;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 20rpx;
+  padding-right: 18rpx;
+}
+.topline {
+  width: 100vw;
+  height: 4rpx;
+  background-color: #7B5EA5;
+}
+.picture {
+  width: 260rpx;
+  height: 260rpx;
+  margin-right: 20rpx;
+}
+.textStyle {
+  font-size: 24rpx;
+  color: '#333333';
+  margin-top: 10rpx;
+}
+.evidenceContainer {
+  display: flex;
+  flex-direction: column;
+  border: 8rpx #7B5EA5 solid;
+  top: 80rpx;
+  width: 500rpx;
+  height: 300rpx;
+  position: absolute;
+  z-index: 3;
+  background-color: white;
+}
+.evidenceBox {
+  border: 2rpx #7B5EA5 solid;
+  margin-top: 140rpx;
+  width: 600rpx;
+  height: 200rpx;
+  z-index: 1;
+}
+.resultIcon {
+  width: 60rpx;
+  height: 60rpx;
+}
+.resultLabelStyle {
+  font-size: 24rpx;
+  color: #999999;
+}
+.evidenceImg {
+  width: 220rpx;
+  height: 220rpx;
+  background-color: black;
+  margin-left: 20rpx;
+}
+.playIcon {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+}

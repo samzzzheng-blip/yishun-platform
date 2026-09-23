@@ -1,0 +1,19 @@
+// Local-only synthetic workflow. Verify edited summary survives refresh and final publication.
+const {chromium}=require('playwright'),assert=require('assert'),crypto=require('crypto'),path=require('path'),fs=require('fs');
+(async()=>{const b=await chromium.launch({headless:true,executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'});
+ try{const p=await b.newPage({viewport:{width:1440,height:1000}}),origin='http://127.0.0.1:4188',errors=[];p.on('pageerror',e=>errors.push(e.message));
+ await p.goto(origin+'/rateWorkflow');await p.getByPlaceholder('请输入用户名').fill('demo');await p.getByPlaceholder('请输入密码').fill('demo123');await p.getByRole('button',{name:/^登\s*录$/}).click();await p.getByRole('heading',{name:'评级流程',exact:true}).waitFor();const token=await p.evaluate(()=>localStorage.getItem('token'));
+ const api=async(name,data)=>{const r=await(await p.request.post(origin+'/api/usr/'+name,{headers:{Authorization:token},data})).json();assert.equal(r.code,200,JSON.stringify(r));return r.data};
+ const batch='人工汇总测试-'+Date.now();let j=await api('gradingCreate',{jobNumber:'G-'+crypto.randomUUID(),batch});
+ const t=await api('gradingTemplateSave',{name:'汇总测试-'+Date.now(),fieldsJson:JSON.stringify([{key:'cardName',label:'名称',join:'newline'},{key:'series',label:'系列',join:'space'}])});
+ j=await api('gradingTemplateSelect',{id:j.id,version:j.version,templateId:t.id,expectedSchema:j.templateSchema||'',scope:'SINGLE'});
+ j=await api('gradingSave',{...j,cardName:'测试卡',templateValues:JSON.stringify({series:'2026 系列'}),surface:'10',center:'10',edge:'9.5',corner:'10',score:'10'});j=await api('gradingAdvance',{id:j.id,version:j.version,action:'NEXT'});
+ await p.goto(origin+'/rateWorkflow?job='+j.id);const input=p.getByRole('textbox',{name:'卡片信息汇总',exact:true});await input.waitFor();assert.equal(await input.inputValue(),'测试卡\n2026 系列');
+ const custom='2026  人工修改的系列\n测试卡（手工核对）\n#ABC-123 SR';await input.fill(custom);await p.getByLabel('批次起始编号',{exact:true}).fill(String(Date.now()).slice(-12));assert(await p.getByRole('button',{name:'预览整批编号',exact:true}).isDisabled());
+ await p.getByRole('button',{name:'保存汇总',exact:true}).click();await p.waitForFunction(()=>document.querySelector('.grading-summary textarea')!==null);await p.reload();await input.waitFor();assert.equal(await input.inputValue(),custom);
+ await p.getByRole('button',{name:'恢复自动汇总',exact:true}).click();assert.equal(await input.inputValue(),'测试卡\n2026 系列');await p.getByRole('button',{name:'保存汇总',exact:true}).click();await p.waitForFunction(()=>document.querySelector('.grading-summary textarea')!==null);await input.fill(custom);await p.getByRole('button',{name:'保存汇总',exact:true}).click();await p.waitForFunction(()=>document.querySelector('.grading-summary textarea')!==null);
+ const out=path.resolve(__dirname,'../.impeccable/review/summary-edit');fs.mkdirSync(out,{recursive:true});await p.locator('.grading-summary').screenshot({path:path.join(out,'desktop.png')});await p.setViewportSize({width:390,height:844});await p.locator('.grading-summary').screenshot({path:path.join(out,'mobile.png')});assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+ await p.getByLabel('批次起始编号',{exact:true}).fill(String(Date.now()).slice(-12));await p.getByRole('button',{name:'预览整批编号',exact:true}).click();await p.getByRole('dialog').locator('td').filter({hasText:custom}).waitFor();await p.getByRole('button',{name:'确认发布并标记已完成',exact:true}).click();await p.locator('.grading-progress .active').filter({hasText:'已完成'}).waitFor();assert.equal(await p.locator('.grading-summary pre').innerText(),custom);assert.equal(await input.count(),0);assert.deepEqual(errors,[]);
+ console.log('PASS: pending summary edit/save/refresh/reset, unchanged stage, unsaved publish blocked, final frozen summary, desktop/mobile');
+ }finally{await b.close()}
+})().catch(e=>{console.error(e);process.exit(1)});

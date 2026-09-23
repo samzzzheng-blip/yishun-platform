@@ -1,0 +1,4 @@
+com.techtron.onebook.framework.idempotent.config.OnebookIdempotentConfiguration
+com.techtron.onebook.framework.lock4j.config.OnebookLock4jConfiguration
+com.techtron.onebook.framework.ratelimiter.config.OnebookRateLimiterConfiguration
+com.techtron.onebook.framework.signature.config.OnebookApiSignatureAutoConfiguration

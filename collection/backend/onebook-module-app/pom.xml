@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.techtron</groupId>
+        <artifactId>onebook</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>onebook-module-app</artifactId>
+    <packaging>jar</packaging>
+
+    <name>${project.artifactId}</name>
+    <description>
+        app模块
+    </description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.vaadin.external.google</groupId>
+                    <artifactId>android-json</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.techtron</groupId>
+            <artifactId>onebook-module-member</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.techtron</groupId>
+            <artifactId>onebook-module-pay</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.techtron</groupId>
+            <artifactId>onebook-module-infra</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.techtron</groupId>
+            <artifactId>onebook-module-system</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <!-- 业务组件 -->
+
+        <!-- Web 相关 -->
+        <dependency>
+            <groupId>com.techtron</groupId>
+            <artifactId>onebook-spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.techtron</groupId>
+            <artifactId>onebook-spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!-- DB 相关 -->
+        <dependency>
+            <groupId>com.techtron</groupId>
+            <artifactId>onebook-spring-boot-starter-mybatis</artifactId>
+        </dependency>
+
+        <!-- Job 定时任务相关 -->
+        <dependency>
+            <groupId>com.techtron</groupId>
+            <artifactId>onebook-spring-boot-starter-job</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

@@ -1,0 +1,516 @@
+{
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"^s-(.*)": "@/sheep/components/s-$1/s-$1.vue",
+			"^su-(.*)": "@/sheep/ui/su-$1/su-$1.vue"
+		}
+	},
+	"pages": [
+    {
+      "path": "pages/index/index",
+      "aliasPath": "/",
+      "style": {
+        "navigationBarTitleText": "首页",
+        "enablePullDownRefresh": true
+      },
+      "meta": {
+        "auth": false,
+        "sync": true,
+        "title": "首页",
+        "group": "商城"
+      }
+    },
+    {
+      "path": "pages/index/user",
+      "style": {
+        "navigationBarTitleText": "个人中心",
+        "enablePullDownRefresh": true
+      },
+      "meta": {
+        "sync": true,
+        "title": "个人中心",
+        "group": "商城"
+      }
+    },
+    {
+      "path": "pages/index/trade",
+      "style": {
+        "navigationBarTitleText": "竞价市场"
+      },
+      "meta": {
+        "sync": true,
+        "title": "竞价市场",
+        "group": "商城"
+      }
+    },
+		{
+      "path": "pages/index/message",
+      "style": {
+        "navigationBarTitleText": "消息"
+      },
+      "meta": {
+        "sync": true,
+        "title": "消息",
+        "group": "商城"
+      }
+    },
+	
+		{
+      "path": "pages/index/store",
+      "style": {
+        "navigationBarTitleText": "藏品"
+      },
+      "meta": {
+        "sync": true,
+        "title": "藏品",
+        "group": "商城"
+      }
+    }
+  ],
+	"subPackages": [
+		{
+      "root": "pages/auction",
+      "pages": [
+        {
+          "path": "demo",
+          "style": { "navigationBarTitleText": "竞价市场" },
+          "meta": { "auth": false, "title": "竞价市场", "group": "商城" }
+        },
+        {
+          "path": "detail",
+          "style": { "navigationBarTitleText": "竞价详情", "enablePullDownRefresh": true },
+          "meta": { "auth": false, "title": "竞价详情", "group": "商城" }
+        },
+        {
+          "path": "create",
+          "style": { "navigationBarTitleText": "上架竞价" },
+          "meta": { "auth": true, "title": "上架竞价", "group": "商城" }
+        },
+        {
+          "path": "my",
+          "style": { "navigationBarTitleText": "我的竞价" },
+          "meta": { "auth": true, "title": "我的竞价", "group": "商城" }
+        }
+      ]
+    },
+		{
+      "root": "pages/collection",
+      "pages": [
+        { "path": "parcel", "style": { "navigationBarTitleText": "寄送包裹" }, "meta": { "auth": true, "title": "寄送包裹" } },
+				{
+          "path": "add",
+          "style": {
+            "navigationBarTitleText": "资产登记"
+          },
+          "meta": {
+            "auth": true
+          }
+        },
+				{
+          "path": "detail",
+          "style": {
+            "navigationBarTitleText": "资产详情"
+          },
+          "meta": {
+            "auth": true
+          }
+        },
+				{
+          "path": "transfer",
+          "style": {
+            "navigationBarTitleText": "藏品转移"
+          }
+        },
+				{
+          "path": "withdraw",
+          "style": {
+            "navigationBarTitleText": "藏品取回"
+          }
+        },
+		{
+		  "path": "exchange",
+		  "style": {
+		    "navigationBarTitleText": "兑换中心"
+		  }
+		},
+		{
+		  "path": "exchangelog",
+		  "style": {
+		    "navigationBarTitleText": "兑换记录"
+		  },
+		  "meta": {
+		    "auth": true
+		  }
+		},
+		{
+		  "path": "getbacklog",
+		  "style": {
+		    "navigationBarTitleText": "取回记录"
+		  },
+		  "meta": {
+		    "auth": true
+		  }
+		},
+		{
+		  "path": "order",
+		  "style": {
+		    "navigationBarTitleText": "交易记录"
+		  },
+		  "meta": {
+		    "auth": true
+		  }
+		},
+		{
+		  "path": "question",
+		  "style": {
+		    "navigationBarTitleText": "兑换信息"
+		  },
+		  "meta": {
+		    "auth": true
+		  }
+		},
+		{
+		  "path": "good",
+		  "style": {
+		    "navigationBarTitleText": "交易市场"
+		  },
+		  "meta": {
+		    "auth": true
+		  }
+		},
+		{
+		  "path": "sell-list",
+		  "style": {
+		    "navigationBarTitleText": "我的在售"
+		  },
+		  "meta": {
+		    "auth": true
+		  }
+		},
+		{
+		  "path": "msglist",
+		  "style": {
+		    "navigationBarTitleText": "消息"
+		  },
+		  "meta": {
+		    "sync": true,
+		    "title": "消息",
+		    "group": "商城"
+		  }
+		},
+		{
+		  "path": "storage-rule",
+		  "style": {
+		    "navigationBarTitleText": "寄存规则"
+		  },
+		  "meta": {
+		    "auth": true
+		  }
+		}
+			]
+    },
+    {
+			"root": "pages/commission",
+			"pages": [
+        {
+          "path": "withdraw",
+          "style": {
+            "navigationBarTitleText": "申请提现"
+          },
+          "meta": {
+            "auth": true,
+            "sync": true,
+            "title": "申请提现",
+            "group": "分销商城"
+          }
+        },
+        {
+          "path": "wallet",
+          "style": {
+            "navigationBarTitleText": "提现记录"
+          },
+          "meta": {
+            "auth": true,
+            "sync": true,
+            "title": "提现记录",
+            "group": "分销中心"
+          }
+        }
+      ]
+    },
+		{
+			"root": "pages/user",
+			"pages": [
+        {
+          "path": "info",
+          "style": {
+            "navigationBarTitleText": "我的信息"
+          },
+          "meta": {
+            "auth": true,
+            "sync": true,
+            "title": "用户信息",
+            "group": "用户中心"
+          }
+        },
+        {
+          "path": "goods-collect",
+          "style": {
+            "navigationBarTitleText": "我的收藏"
+          },
+          "meta": {
+            "auth": true,
+            "sync": true,
+            "title": "商品收藏",
+            "group": "用户中心"
+          }
+        },
+        {
+          "path": "goods-log",
+          "style": {
+            "navigationBarTitleText": "我的足迹"
+          },
+          "meta": {
+            "auth": true,
+            "sync": true,
+            "title": "浏览记录",
+            "group": "用户中心"
+          }
+        },
+        {
+          "path": "address/list",
+          "style": {
+            "navigationBarTitleText": "收货地址"
+          },
+          "meta": {
+            "auth": true,
+            "sync": true,
+            "title": "地址管理",
+            "group": "用户中心"
+          }
+        },
+        {
+          "path": "address/edit",
+          "style": {
+            "navigationBarTitleText": "编辑地址"
+          },
+          "meta": {
+            "auth": true,
+            "title": "编辑地址"
+          }
+        },
+        {
+          "path": "goods_details_store/index",
+          "style": {
+            "navigationBarTitleText": "自提门店"
+          },
+          "meta": {
+            "auth": true,
+            "sync": true,
+            "title": "地址管理",
+            "group": "用户中心"
+          }
+        },
+        {
+          "path": "wallet/transaction",
+          "style": { "navigationBarTitleText": "关联订单" },
+          "meta": { "auth": true, "title": "关联订单" }
+        },
+        {
+          "path": "wallet/money",
+          "style": {
+            "navigationBarTitleText": "我的余额"
+          },
+          "meta": {
+            "auth": true,
+            "sync": true,
+            "title": "用户余额",
+            "group": "用户中心"
+          }
+        },
+        {
+          "path": "wallet/stone",
+          "style": { "navigationBarTitleText": "能量石明细", "enablePullDownRefresh": true },
+          "meta": { "auth": true, "title": "能量石明细" }
+        },
+        {
+          "path": "wallet/score",
+          "style": {
+            "navigationBarTitleText": "我的积分"
+          },
+          "meta": {
+            "auth": true,
+            "sync": true,
+            "title": "用户积分",
+            "group": "用户中心"
+          }
+        }
+      ]
+		},
+		{
+			"root": "pages/public",
+			"pages": [{
+					"path": "setting",
+					"style": {
+						"navigationBarTitleText": "系统设置"
+					},
+					"meta": {
+						"sync": true,
+						"title": "系统设置",
+						"group": "通用"
+					}
+				},
+				{
+					"path": "subscription",
+					"style": {
+						"navigationBarTitleText": "订阅信息管理"
+					},
+					"meta": {
+						"sync": true,
+						"title": "订阅信息管理",
+						"group": "通用"
+					}
+				},
+				{
+					"path": "richtext",
+					"style": {
+						"navigationBarTitleText": "富文本"
+					},
+					"meta": {
+						"sync": true,
+						"title": "富文本",
+						"group": "通用"
+					}
+				},
+				{
+					"path": "faq",
+					"style": {
+						"navigationBarTitleText": "常见问题"
+					},
+					"meta": {
+						"sync": true,
+						"title": "常见问题",
+						"group": "通用"
+					}
+				},
+				{
+					"path": "error",
+					"style": {
+						"navigationBarTitleText": "错误页面"
+					}
+				},
+				{
+					"path": "webview",
+					"style": {
+						"navigationBarTitleText": ""
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/chat",
+			"pages": [{
+				"path": "index",
+				"style": {
+					"navigationBarTitleText": "客服",
+                    "app-plus": {
+                      "softinputMode": "adjustResize"
+                    }
+				},
+				"meta": {
+					"auth": true,
+					"sync": true,
+					"title": "客服",
+					"group": "客服"
+				}
+			}]
+		},
+		{
+			"root": "pages/order",
+			"pages": [
+				{
+					"path": "list",
+					"style": {
+						"navigationBarTitleText": "我的订单",
+                        // #ifdef MP-WEIXIN
+                        "navigationStyle": "default",
+                        "navigationBarBackgroundColor": "#FFFFFF",
+                        "navigationBarTextStyle": "black",
+                        // #endif
+						"enablePullDownRefresh": true
+					},
+					"meta": {
+						"auth": true
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/pay",
+			"pages": [{
+					"path": "index",
+					"style": {
+						"navigationBarTitleText": "收银台"
+					}
+				},
+				{
+					"path": "result",
+					"style": {
+						"navigationBarTitleText": "支付结果"
+					}
+				},
+				{
+					"path": "recharge",
+					"style": {
+						"navigationBarTitleText": "充值余额"
+					},
+					"meta": {
+						"auth": true,
+						"sync": true,
+						"title": "充值余额",
+						"group": "支付"
+					}
+				},
+				{
+					"path": "recharge-log",
+					"style": {
+						"navigationBarTitleText": "充值记录"
+					},
+					"meta": {
+						"auth": true,
+						"sync": true,
+						"title": "充值记录",
+						"group": "支付"
+					}
+				}
+			]
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "一瞬宇宙",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#FFFFFF",
+		"navigationStyle": "custom"
+	},
+	"tabBar": {
+		"list": [
+      {
+        "pagePath": "pages/index/index"
+      },
+      {
+        "pagePath": "pages/index/store"
+      },
+      {
+        "pagePath": "pages/index/trade"
+      },
+      {
+        "pagePath": "pages/index/message"
+      },
+      {
+        "pagePath": "pages/index/user"
+      }
+    ]
+	}
+}

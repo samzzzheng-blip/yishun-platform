@@ -1,0 +1,23 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+const read = path => readFileSync(new URL(path, import.meta.url), 'utf8');
+test('竞价列表整卡进入详情，双列图片完整显示，链接只在详情展示', () => {
+  const list = read('../pages/auction/demo.vue');
+  assert.match(list, /@tap="goDetail\(lot\)"/);
+  assert.match(list, /\/pages\/auction\/detail\?id=/);
+  assert.match(list, /repeat\(2, minmax\(0, 1fr\)\)/);
+  assert.match(list, /mode="aspectFit"/);
+  assert.doesNotMatch(list, /mode="aspectFill"|class="auction-link"/);
+  const detail = read('../pages/auction/detail.vue');
+  assert.match(detail, /AuctionApi.getDetail/);
+  assert.match(detail, /mode="aspectFit"/);
+  assert.match(detail, /uni.previewImage/);
+  assert.match(detail, /@tap="openGoofish"/);
+  assert.match(detail, /在闲鱼搜索用户“一瞬收藏仓”/);
+  assert.match(detail, /copyAuctionShare\(lot.value, uni/);
+  assert.doesNotMatch(detail, /openAuctionMiniProgram|navigateToMiniProgram/);
+  assert.match(detail, /复制闲鱼口令/);
+  assert.match(detail, /word-break: break-all/);
+  assert.match(read('../pages.json'), /"path": "detail",\s*"style": \{ "navigationBarTitleText": "竞价详情"/);
+});

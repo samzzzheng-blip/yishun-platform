@@ -1,0 +1,33 @@
+.home{width:100%; height:200%; background-color: #fff;display: flex;flex-direction: column}
+.homeContent {width: 100%;height: 0;overflow: scroll;flex:1}
+.homeSearch {display:flex;width:100%;height:80px;justify-content:center;align-items: center;margin-top: 20px;position:relative;
+  .line {background-color: #7B5EA5;height: 2px;width: 100%;}
+  .searchArea {padding-left: 15px;padding-right: 12px;display: flex;flex-direction: row;align-items: center; background-color: #fff;position: absolute;
+    .inputbox {border: #999999 1px solid;border-radius: 8px;width: 160px;height: 32px;padding-left: 10px;padding-right:5px;outline: none;color:#333333;}
+    .searchicon {cursor: pointer;margin-left: 10px;background: url("../images/enter/search.png"); width: 25px;height: 25px;padding:5px;background-size: cover;}
+  }
+}
+.preciousContent {width:100%;display:flex;align-items: center;margin-top: 20px;
+  .photoContainer {margin-left: 50%;
+    .photo {width:180px;height:180px;margin-left: -180px;object-fit:contain;}
+  }
+
+  .textContent {display:flex;flex-direction: column;margin-left: 30px;color:#333333;font-size: 16px;height: 180px;
+    .item {display:flex;flex-direction: row;flex:1;align-items: center}
+  }
+}
+.evidenceContainer {width:100%;height:300px;margin-top: 20px;display:flex;align-items: center;justify-content: center;position:relative;
+  .evidenceBorder1 {width:700px;height:200px;border: #7B5EA5 1px solid;}
+  .evidenceBorder2 {width:600px;height:300px;border: #7B5EA5 10px solid;background-color: #fff;position: absolute}
+  .evidenceHeader {display: flex;flex-direction: row;align-items:center;font-size: 16px;padding-left: 20px;padding-right: 20px;padding-top: 10px;
+    .iconImg {background-image: url("../images/enter/result.png"); width:30px; height: 30px; background-size: cover}
+  }
+  .evidenceContent {display: flex;flex-direction: row;align-items:center;padding-left: 20px;
+    .evidenceImg {height: 200px;width:200px;object-fit:contain;}
+    .evidenceVideoContainer{display: flex;align-items:center;justify-content: center;width: 300px;position: relative;
+      .evidenceVideo{width: 300px;height: 200px;object-fit:contain;}
+      .playicon{position: absolute;font-size:50px;color: #fff}
+    }
+
+  }
+}

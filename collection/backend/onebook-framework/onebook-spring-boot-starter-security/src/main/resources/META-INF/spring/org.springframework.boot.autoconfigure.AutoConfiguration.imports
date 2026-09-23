@@ -1,0 +1,3 @@
+com.techtron.onebook.framework.security.config.OnebookSecurityAutoConfiguration
+com.techtron.onebook.framework.security.config.OnebookWebSecurityConfigurerAdapter
+com.techtron.onebook.framework.operatelog.config.OnebookOperateLogConfiguration

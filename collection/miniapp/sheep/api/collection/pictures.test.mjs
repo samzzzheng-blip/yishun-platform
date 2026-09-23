@@ -1,0 +1,10 @@
+import { readFileSync } from 'node:fs';
+import test from 'node:test';
+import assert from 'node:assert/strict';
+const source = readFileSync(new URL('./pictures.js', import.meta.url), 'utf8');
+const { collectionCover } = await import('data:text/javascript;base64,' + Buffer.from(source).toString('base64'));
+test('优先使用多图字段', () => assert.equal(collectionCover({ picUrls: ['new.jpg'], picUrl: 'old.jpg' }), 'new.jpg'));
+test('空数组回退单图', () => assert.equal(collectionCover({ picUrls: [], picUrl: 'old.jpg' }), 'old.jpg'));
+test('兼容历史JSON图片数组', () => assert.equal(collectionCover({ picUrl: '["old.jpg"]' }), 'old.jpg'));
+test('忽略空图片', () => assert.equal(collectionCover({ picUrls: [null, ' ', 'valid.jpg'] }), 'valid.jpg'));
+test('缺少照片不产生undefined地址', () => assert.equal(collectionCover({}), ''));

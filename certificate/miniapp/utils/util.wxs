@@ -1,0 +1,15 @@
+function isEmpty(a) {
+  return a == null || a == '' || a == 'undefined'
+}
+function getHttpsUrl(url) {
+  if (url.indexOf('https:') == -1) {
+    url = url.replace('http:', 'https:')
+  }
+  console.log('--------',url)
+  return url
+}
+
+module.exports = {
+  isEmpty: isEmpty,
+  getHttpsUrl: getHttpsUrl
+}

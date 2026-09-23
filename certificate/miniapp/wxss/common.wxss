@@ -1,0 +1,288 @@
+.bgf5 {
+  background-color: #f5f5f5;
+}
+.bgf9 {
+  background-color: #f9f9f9;
+}
+.bgfff{
+  background-color: #fff;
+}
+.bgpur {
+  background-color: #7E00FF;
+}
+.bgeb {
+  background-color: #ebebeb;
+}
+.bdb {
+  border: 1px solid #ebebeb;
+}
+/* 圆角 */
+.bora8 {
+  border-radius: 16rpx;
+}
+.bora7 {
+  border-radius: 14rpx;
+}
+.fixhei {
+  height: calc(100vh - 156rpx) !important;
+}
+/* 按钮高度 */
+.btnhei {
+  height: 96rpx !important;
+  line-height: 60rpx;
+}
+.btnfont {
+  font-weight: normal !important;
+}
+.boldfont {
+  font-weight: bold;
+}
+/* 按钮背景色 */
+.purp-bg {
+  background-image: linear-gradient(to right, #8E00FF, #7E00FF);
+}
+.ovh {
+  overflow: hidden;
+}
+.h100pc {
+  height: 100%;
+}
+.w100pc {
+  width: 100%;
+}
+.dsn {
+  display: none;
+}
+.dsblo {
+  display: block;
+}
+.fixed {
+  position: fixed;
+}
+.rel {
+  position: relative;
+}
+.abs {
+  position: absolute;
+}
+.tac {
+  text-align: center;
+}
+/* 颜色 */
+.fff {
+  color: #ffffff;
+}
+.purple-text {
+  color: #7e00ff;
+}
+.cfb {
+  color: #BE7FFF;
+}
+.cfr {
+  color: #FF3100;
+}
+.cf333 {
+  color: #333333;
+}
+.cf666 {
+  color: #666666;
+}
+.f999 {
+  color: #999999;
+}
+.fccc {
+  color: #cccccc;
+}
+.fcadd {
+  color: #333300;
+}
+.fc1a {
+  color: #1A100F;
+}
+.fcgre {
+  color: #00D171;
+}
+/* 排列方向-横向排列 */
+.flex {
+  display: flex;
+}
+/* 纵向排列 */
+.flex2 {
+  display: flex;
+  flex-direction: column;
+}
+/* 水平居中,垂直居中 */
+.fcc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.jc-center {
+  justify-content: center;
+}
+/* 两端对齐 */
+.jc-sb {
+  justify-content: space-between;
+}
+/* 分散对齐 */
+.jc-sa {
+  justify-content: space-around;
+}
+/* 垂直居中 */
+.aic {
+  align-items: center;
+}
+/* 换行 */
+.fw {
+  flex-wrap: wrap;
+}
+/* 字体设置 */
+.f10 {
+  font-size: 20rpx;
+}
+.f12 {
+  font-size: 24rpx;
+}
+.f13 {
+  font-size: 26rpx;
+}
+.f14 {
+  font-size: 28rpx;
+}
+.f15 {
+  font-size: 30rpx;
+}
+.f16 {
+  font-size: 32rpx;
+}
+.f17 {
+  font-size: 34rpx;
+}
+.f18 {
+  font-size: 36rpx;
+}
+.f20 {
+  font-size: 40rpx;
+}
+.f22 {
+  font-size: 44rpx;
+}
+.f25 {
+  font-size: 50rpx;
+}
+.f30 {
+  font-size: 60rpx;
+}
+.f32 {
+  font-size: 64rpx;
+}
+.f35 {
+  font-size: 70rpx;
+}
+/* margin-top设置 */
+.mt-5 {
+  margin-top: 10rpx;
+}
+.mt-10 {
+  margin-top: 20rpx;
+}
+.mt-15 {
+  margin-top: 30rpx;
+}
+.mt-20 {
+  margin-top: 40rpx;
+}
+.mt-25 {
+  margin-top: 50rpx;
+}
+.mt-30 {
+  margin-top: 60rpx;
+}
+.mt-39 {
+  margin-top: 78rpx;
+}
+/* matgin-botton设置 */
+.mb-5 {
+  margin-bottom: 10rpx;
+}
+.mb-10 {
+  margin-bottom: 20rpx;
+}
+.mb-15 {
+  margin-bottom: 30rpx;
+}
+.mb-20 {
+  margin-bottom: 40rpx;
+}
+.mb-25 {
+  margin-bottom: 50rpx;
+}
+.mb-30 {
+  margin-bottom: 60rpx;
+}
+.mr-10 {
+  margin-right: 20rpx;
+}
+.mr-15 {
+  margin-right: 20rpx;
+}
+.mr-20 {
+  margin-right: 40rpx;
+}
+.pad-10 {
+  padding: 20rpx;
+}
+.pad-left-10 {
+  padding-left: 20rpx;
+}
+.ml-5 {
+  margin-left: 10rpx;
+}
+/* 按钮边距 */
+.padbtn{
+  width: 94%;
+  padding: 0 3%;  
+}
+/* 固定底部 */
+.botfix{
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+}
+/* weui */
+.weui-badge {
+  background-color: #FF3100;
+  color: #fff;
+  font-size: 22rpx;
+  border: 1px solid #FF3100;
+}
+.nosrocll{
+  overflow: hidden !important;
+}
+.btnone:after {
+  border: none;
+}
+.authstep {
+  margin-left: 28%;
+}
+.input-placeholder {
+  color: #cccccc
+}
+.column-center {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+}
+
+.row-center {
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+}
+.row-alignitem-center {
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+}

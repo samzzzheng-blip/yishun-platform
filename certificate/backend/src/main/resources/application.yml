@@ -1,0 +1,25 @@
+# 公共环境部分
+spring:
+  # 默认使用开发环境（生成环境命令可以覆盖这里，java jar xxx.jar --spring.profiles.active=prod)
+  profiles:
+    active: dev
+
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        strategy: org.hibernate.cfg.DefaultComponentSafeNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+
+server:
+  port: 8081
+  # 配合nginx, request.getScheme()返回https
+  use-forward-headers: true

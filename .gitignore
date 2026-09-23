@@ -1,0 +1,31 @@
+# Generated outputs and dependencies
+**/node_modules/
+**/target/
+**/dist/
+**/unpackage/
+**/.cache/
+**/coverage/
+**/logs/
+**/*.log
+**/.DS_Store
+**/._*
+**/.idea/
+**/.vscode/
+# Secrets and machine state
+**/.env.local
+**/project.private.config.json
+**/*.pem
+**/*.key
+**/*.p12
+**/*.pfx
+**/*.jks
+**/*.keystore
+secrets/
+# Backups and packages
+**/*.jar
+**/*.war
+**/*.class
+**/*.zip
+**/*.tar.gz
+**/*.rdb
+**/*.sqlite

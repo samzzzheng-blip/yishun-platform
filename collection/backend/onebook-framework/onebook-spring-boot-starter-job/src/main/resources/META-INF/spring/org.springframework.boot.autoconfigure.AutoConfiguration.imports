@@ -1,0 +1,2 @@
+com.techtron.onebook.framework.quartz.config.OnebookQuartzAutoConfiguration
+com.techtron.onebook.framework.quartz.config.OnebookAsyncAutoConfiguration

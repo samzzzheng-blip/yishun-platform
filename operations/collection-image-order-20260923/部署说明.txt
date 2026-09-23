@@ -1,0 +1,9 @@
+2026-09-23 一口价管理图片拖动排序部署
+生产地址：https://uni.yishunqianming.com/collection/yikoujia
+新镜像：yudao-server:20260923-image-order
+旧容器：yudao-server-before-image-order-20260923（已停止，保留回退）
+服务端备份：/work/backups/image-order-20260923
+旧静态目录：/work/nginx/html/yudao-ui-admin-before-image-order-20260923
+基于线上原始JAR仅替换4个排序相关class；保留原依赖及配置。Java17兼容。
+验证：后端Started日志；nginx配置通过；主页和ImageOrder JS/CSS线上200且逐字节匹配构建产物；未登录排序接口返回401。
+本地排序测试3项通过。浏览器控制超时，未完成登录后的实际拖动保存验证。

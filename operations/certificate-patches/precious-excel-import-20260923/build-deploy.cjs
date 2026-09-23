@@ -1,0 +1,15 @@
+const fs=require('fs'),path=require('path'),cp=require('child_process'),assert=require('assert');
+const dir=__dirname, project='/Volumes/Lenovo K102/yishun/react-master';
+const ps="$ProgressPreference='SilentlyContinue'; Add-Type -AssemblyName System.IO.Compression.FileSystem; $z=[IO.Compression.ZipFile]::OpenRead('D:\\project\\yishun-0.0.1-SNAPSHOT.jar'); try {$s=$z.GetEntry('BOOT-INF/classes/com/kiss/yishun/controller/admin/PreciousController.class').Open(); $m=New-Object IO.MemoryStream; $s.CopyTo($m); [Console]::Write([Convert]::ToBase64String($m.ToArray()))}finally{$s.Dispose();$z.Dispose()}";
+const b64=cp.execFileSync('ssh',['-T','-i','/Users/mac/.ssh/id_ed25519_yishun_admin_20260918','-o','StrictHostKeyChecking=yes','-o','UserKnownHostsFile=/Users/mac/.ssh/known_hosts_yishun_admin','administrator@47.111.232.58','powershell -NoProfile -EncodedCommand '+Buffer.from(ps,'utf16le').toString('base64')],{encoding:'utf8'});
+const dest=path.join(dir,'baseline/com/kiss/yishun/controller/admin');fs.mkdirSync(dest,{recursive:true});fs.writeFileSync(path.join(dest,'PreciousController.class'),Buffer.from(b64.trim(),'base64'));
+const source=fs.readFileSync(path.join(dir,'client.search-20260918.js'),'utf8');
+const before='E.default.createElement(r.default,(0,o.default)({},n,{multiple:!1}),E.default.createElement(i.default,{type:"primary"}," excel导入"))';
+assert.equal(source.split(before).length-1,1);
+const after='E.default.createElement(window.YishunImportFactory(E.default,{Button:i.default,Modal:y.default}),{onImported:function(){a.getData()}})';
+fs.mkdirSync(path.join(dir,'payload/frontend'),{recursive:true});
+fs.writeFileSync(path.join(dir,'payload/frontend/client.precious-import-20260923.js'),source.replace(before,after));
+const html=fs.readFileSync(path.join(dir,'index.html'),'utf8');assert.equal(html.split('client.search-20260918.js').length-1,1);
+fs.writeFileSync(path.join(dir,'payload/frontend/index.html'),html.replace('<script type="text/javascript" src="client.search-20260918.js"></script>','<script type="text/javascript" src="precious-import-20260923.js"></script><script type="text/javascript" src="client.precious-import-20260923.js"></script>'));
+const webpack=require(project+'/node_modules/webpack');
+webpack({context:project,entry:path.join(dir,'factory.js'),output:{path:path.join(dir,'payload/frontend'),filename:'precious-import-20260923.js',library:'YishunImportFactory',libraryTarget:'var'},resolve:{modules:[project+'/node_modules','node_modules']},externals:{react:'YishunImportReact',antd:'YishunImportAntd'},module:{rules:[{test:/\.js$/,exclude:/node_modules/,loader:project+'/node_modules/babel-loader',options:{babelrc:false,presets:[project+'/node_modules/babel-preset-env',project+'/node_modules/babel-preset-stage-0',project+'/node_modules/babel-preset-react'],plugins:[project+'/node_modules/babel-plugin-transform-runtime']}}]},plugins:[new webpack.DefinePlugin({'process.env.NODE_ENV':JSON.stringify('production')})]},(err,stats)=>{if(err||stats.hasErrors()){console.error(err||stats.toString());process.exitCode=1;}else console.log(stats.toString({modules:false}));});

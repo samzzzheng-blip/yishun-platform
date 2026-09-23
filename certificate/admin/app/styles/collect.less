@@ -1,0 +1,312 @@
+@import "./base.less";
+
+.collect {width:100%; background-color: #ffffff;display: flex;flex-direction: column;}
+.collectContainer1 {
+  position: relative;
+  display: flex;
+  width:100%;
+  flex-direction: column;
+  background-color: #513E75;
+  align-items: center;
+  .collectGrayBg {
+    background-color: #efefef;
+    height: 30vw;
+    width: 100vw;
+    position: absolute;
+  }
+  .collectCardContainer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 51.25vw;
+    height: 36.2vw;
+    background-image: url("../images/teach/collect/banner1.png");
+    background-size: cover;
+
+    .collectCard1 {
+      width: 80/3vw;
+      height: 80/3vw;
+      background-image: url("../images/teach/collect/card1.png");
+      background-size: cover;
+      //background-color:yellow;
+    }
+    .collectCard2 {
+      width: 80/3vw;
+      height: 80/3vw;
+      background-image: url("../images/teach/collect/card2.png");
+      background-size: cover;
+      //background-color:yellow;
+
+    }
+    .collectCard3 {
+      width: 80/3vw;
+      height: 80/3vw;
+      background-image: url("../images/teach/collect/card3.png");
+      background-size: cover;
+      //background-color:yellow;
+    }
+    .collectCard4 {
+      width: 80/3vw;
+      height: 120/3vw;
+      background-image: url("../images/teach/collect/card4.png");
+      background-size: cover;
+      //background-color:red;
+
+    }
+    .collectCard5 {
+      width: 80/3vw;
+      height: 120/3vw;
+      background-image: url("../images/teach/collect/card5.png");
+      background-size: cover;
+      //background-color:red;
+
+    }
+    .collectCard6 {
+      width: 80/3vw;
+      height: 120/3vw;
+      background-image: url("../images/teach/collect/card6.png");
+      background-size: cover;
+      //background-color:red;
+    }
+  }
+
+  .collectCardContainerBg2 {
+    position: absolute;
+    width: 80vw;
+    height: 67vw;
+    -moz-box-shadow: -10px 10px 5px black; /* 老的 Firefox */
+    box-shadow: -10px 10px 5px black;
+  }
+
+}
+
+.collectDescTitleImgContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100vw;
+  position: relative;
+  padding-top: 100px;
+  background-color: #efefef;
+  border-bottom: 8px solid #513E75;
+  justify-content: center;
+}
+.collectDescTitleContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  position: relative;
+  background-color: #efefef;
+  justify-content: center;
+}
+.collectDescTitleItemContainer {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex:1;
+  align-self: center;
+  position: relative;
+  cursor: pointer;
+}
+.collectDescTitle {
+  color: #7B5EA5;
+  font-size: 40px;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  white-space: pre-wrap;
+  text-align: center;
+  font-family: "HYCHAOJIZHANJIAW";
+}
+.collectArrowSelect {
+  position: absolute;
+  bottom: -12px;
+  width:0;
+  height:0;
+  border-top:12px solid white;
+  border-left:12px solid transparent;
+  border-right:12px solid transparent;
+  z-index: 4;
+  margin-left: 30px;
+}
+.collectFontThemeTitle {
+  color: #7B5EA5;
+  font-size: 30px;
+  font-weight: bold;
+}
+.collectDescContent {
+  display: flex;
+  flex-direction: row;
+  flex:1;
+  background: url("../images/teach/collect/price_item_bg.png");
+  background-size: cover;
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  justify-content: center;
+  align-items: center;
+}
+.collectPrice1 {
+  width: 16.9vw;
+  height: 26.87vw;
+  background: url("../images/teach/collect/price1.png");
+  background-size: cover;
+  margin-right: 7vw;
+}
+.collectPrice2 {
+  width: 16.9vw;
+  height: 26.87vw;
+  background: url("../images/teach/collect/price2.png");
+  background-size: cover;
+  margin-right: 7vw;
+}
+.collectPrice3 {
+  width: 16.9vw;
+  height: 26.87vw;
+  background: url("../images/teach/collect/price3.png");
+  background-size: cover;
+}
+.collectPriceTitleContainer {
+  display: flex;
+  flex:1;
+  flex-direction: row;
+  margin: 20px 40px 0 10px;
+  z-index: 2;
+}
+.collectPriceContainer {
+  display: flex;
+  flex:1;
+  flex-direction: row;
+  margin-top: 30px;
+}
+.collectFontWhiteTitle {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+}
+.collectFontWhiteContent {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+}
+.collectDescPriceItem {
+  width:15vw;
+  margin-right: 2vw;
+  background-image: linear-gradient(#7C5EA8,#B094E0, #ffffff);
+  border: white 1px solid;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  margin-left:20px;
+}
+.collectDescPriceImg {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 12vw;
+  height: 12/1.31vw;
+  background: url("../images/teach/collect/price_card.png");
+  background-size: contain;
+}
+.collectDescPriceLabelContainer {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.collectDescShadow {
+  -moz-box-shadow: 0px 10px 5px black; /* 老的 Firefox */
+  box-shadow: 0px 10px 5px black;
+  margin-bottom: 80px;
+}
+.collectRuleContainer {
+  width: 100vw;
+  height: 100/1704*646vw;
+  background: url("../images/teach/collect/cardrule.png");
+  background-size: contain;
+}
+.collectDescFeatureContainer{
+  display: flex;
+  flex-direction: row;
+  flex:1;
+  background: url("../images/teach/collect/price_item_bg.png");
+  background-size: cover;
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.collectDescFeatureSample0 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10vw;
+  margin-top: 20px;
+  width: 100px;
+}
+.collectDescFeatureText0 {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+.collectDescFeatureSampleImg {
+  width: 100px;
+  height: 132px;
+  background-image: url("../images/teach/collect/sample.jpg");
+  background-size: contain;
+  margin-top: 20px;
+}
+.collectDescFeatureText1 {
+  width: 35vw;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  white-space: pre-wrap;
+  margin-left: 30px;
+}
+.collectDescFeatureModuleImg {
+  width: 200px;
+  height: 156px;
+  background-image: url("../images/teach/collect/module.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 60px;
+  margin-left: 30px;
+}
+.collectDescFeatureText2 {
+  width: 35vw;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  white-space: pre-wrap;
+  margin-left: 30px;
+  margin-right: 10vw;
+}
+.collectCardFitContainer {
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+}
+.collectDescTitle1 {
+  width: 13.85vw;
+  height: 13.33vw;
+  background: url("../images/teach/collect/title1.png");
+  background-size: cover;
+  margin-right: 10.1vw;
+}
+.collectDescTitle2 {
+  width: 13.85vw;
+  height: 13.33vw;
+  background: url("../images/teach/collect/title2.png");
+  background-size: cover;
+  margin-right: 10.1vw;
+}
+.collectDescTitle3 {
+  width: 13.85vw;
+  height: 13.33vw;
+  background: url("../images/teach/collect/title3.png");
+  background-size: cover;
+}

@@ -1,0 +1,5 @@
+<view class='container'>
+  <view class='page-content'>
+    <video src="{{ url }}" class="imageView" autoplay="true" object-fit="contain"/>
+  </view>
+</view>

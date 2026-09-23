@@ -1,0 +1,12 @@
+import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+const origin='https://yishunqianming.com';
+const html=await fetch(origin+'/preciousManage',{cache:'no-store'}).then(r=>{assert.equal(r.status,200);return r.text()});
+assert(html.includes('client.precious-20260918.js'));
+const bytes=Buffer.from(await fetch(origin+'/client.precious-20260918.js',{cache:'no-store'}).then(r=>{assert.equal(r.status,200);return r.arrayBuffer()}));
+const local=readFileSync(new URL('./payload/frontend/client.precious-20260918.js',import.meta.url));
+assert.equal(createHash('sha256').update(bytes).digest('hex'),createHash('sha256').update(local).digest('hex'));
+const response=await fetch(origin+'/api/usr/queryPreciousList?page=1&pageSize=1').then(r=>r.json());
+assert.equal(response.code,401);
+console.log('PASS: public page references new bundle, bundle hash matches, API authentication preserved');

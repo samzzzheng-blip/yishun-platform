@@ -1,0 +1,15 @@
+const assert=require('assert');
+const {hasRatingMenu,canEditRating,augmentRatingMenus,safeRatingReturn}=require('../app/utils/ratingNavigation');
+const nav=[{id:1,resKey:'platform',children:[{id:2,resKey:'rateManage',resName:'评级'},{id:3,resKey:'preciousManage'}]}];
+const original=JSON.stringify(nav);
+assert(hasRatingMenu(nav));assert(!hasRatingMenu([{resKey:'preciousManage'}]));
+const full=augmentRatingMenus(nav,true);
+assert.deepStrictEqual(full[0].children.map(x=>x.resKey),['rateManage','rateTemporary','rateIntake','rateWorkflow','preciousManage']);
+assert.strictEqual(JSON.stringify(nav),original);
+assert.strictEqual(JSON.stringify(augmentRatingMenus(full,true)),JSON.stringify(full));
+assert(!augmentRatingMenus(nav,false)[0].children.some(x=>x.resKey==='rateIntake'));
+assert.deepStrictEqual(augmentRatingMenus([{resKey:'preciousManage'}],true),[{resKey:'preciousManage'}]);
+assert(!canEditRating({getItem:()=>null}));assert(canEditRating({getItem:k=>k==='gUpdateMenuList'?JSON.stringify(nav):null}));
+assert.equal(safeRatingReturn('//evil.test'),'/manage');assert.equal(safeRatingReturn('/rateIntake'),'/rateIntake');
+assert.equal(safeRatingReturn('/rateWorkflow?job=1'),'/rateWorkflow?job=1');assert.equal(safeRatingReturn('/rateManageFake'),'/manage');
+console.log('PASS: rating menu inheritance, immutable/idempotent augmentation, permission handling and safe login return');

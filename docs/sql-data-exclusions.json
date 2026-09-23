@@ -1,0 +1,50 @@
+[
+  {
+    "file": "collection/backend/onebook-server/src/main/resources/db/migration/V4__stone_record.sql",
+    "statements_removed": 42
+  },
+  {
+    "file": "collection/backend/onebook-server/src/main/resources/db/migration/V2__create_app_storage_plan.sql",
+    "statements_removed": 1
+  },
+  {
+    "file": "collection/backend/sql/mysql/ruoyi-vue-pro.sql",
+    "statements_removed": 35
+  },
+  {
+    "file": "collection/backend/sql/mysql/quartz.sql",
+    "statements_removed": 5
+  },
+  {
+    "file": "collection/backend/sql/mysql/purchase_category_20260921.sql",
+    "statements_removed": 1
+  },
+  {
+    "file": "collection/backend/sql/mysql/direct_purchase_category_20260908.sql",
+    "statements_removed": 1
+  },
+  {
+    "file": "collection/backend/sql/mysql/app_inbox_messages_20260908.sql",
+    "statements_removed": 2
+  },
+  {
+    "file": "collection/backend/sql/mysql/pay-2025-07-27传播违法.sql",
+    "statements_removed": 2
+  },
+  {
+    "file": "collection/backend/sql/mysql/ruoyi-vue-pro-mall-2025-05-12传播违法.sql",
+    "statements_removed": 11
+  },
+  {
+    "file": "collection/backend/sql/mysql/auction_20260820.sql",
+    "statements_removed": 2
+  },
+  {
+    "file": "collection/backend/sql/mysql/app.sql",
+    "statements_removed": 1
+  },
+  {
+    "file": "collection/backend/sql/mysql/category_merge_20260918.sql",
+    "statements_removed": 3
+  }
+]

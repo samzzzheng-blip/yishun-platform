@@ -1,0 +1,108 @@
+@themeColor                  : #A49BC4; // 主题色：淡紫色
+@btnFontSize                 : 14px; // 按钮默认字号
+@inputFontSize               : 14px; // 输入框默认字号
+@inputColor                  : 'black'; // 输入框默认颜色
+@r1000height                 : 100vh;
+
+// 通用样式
+.base-input{color: @inputColor;font-size: @inputFontSize; background-color: transparent;}
+.base-btn{color: white;font-size: @btnFontSize;background-color: @themeColor;border-radius: 50px;border:none;}
+.base-btn.ant-btn:hover, .base-btn.ant-btn:focus, .base-btn.ant-btn:active, .base-btn.ant-btn.active {text-decoration: none;color: #fff;background: @themeColor;border-color: #fff;}
+// 弹窗最大高度重写
+body .ant-modal .ant-modal-body{max-height: calc(~"@{r1000height} * 0.9")}
+
+.home-box{position:relative;width:100%; height:100%;background: url("../images/smartdetect/home/home_bg.jpg") no-repeat;background-size:cover;display: flex;flex-direction: column;z-index: 0;}
+.header-box{width: 100%;background: #000000; padding: 10px 0;z-index: 100;}
+.header-title{font-size: 14px;margin-left: 150px;color: white;}
+.nav-box{width: 100%;display: flex;flex-direction: row;justify-content: space-between;align-items: center;margin-top: 20px;z-index: 100;}
+.logo{width: 30px;height: 30px;background: url("../images/smartdetect/logo.png");background-size: contain;margin-left: 150px;}
+.login-btn-box{display: flex;flex-direction: row;align-items: center;margin-right: 150px;}
+.login-btn{padding: 4px 30px;background-color: transparent;}
+.register-btn{padding: 4px 30px;border-radius:20px;margin-left: 20px;background-color: black;}
+.login-box{background-color: white;display: flex;flex-direction: column;position: absolute;top: 110px;right: 180px;padding:16px 14px;border-radius:4px;z-index:10;box-shadow: 10px 10px 10px;}
+.login-box-title{color: black;font-size:16px;}
+.login-phone-input{width: 200px;color: @inputColor;font-size: @inputFontSize;margin-top: 15px;background-color: #f8f8f8;border-radius: 50px;border:none;}
+.login-pwd-input{width: 200px;color: @inputColor;font-size: @inputFontSize;margin-top: 15px;background-color: #f8f8f8;border-radius: 50px;border:none;}
+.login-box-btn{width: 200px;margin-top: 30px;}
+.register-box{background-color: white;display: flex;flex-direction: column;position: absolute;top: 110px;right: 80px;padding:16px 14px;border-radius:4px;z-index:10;box-shadow: 10px 10px 10px;}
+.register-box-title{color: black;font-size:16px;}
+.register-phone-box{margin-top: 15px;display: flex;flex-direction: row;align-items: center;background-color: #f8f8f8;border-radius: 50px;}
+.register-phone-area{width: 40px;display: flex;align-items: center;justify-content: center;}
+.register-phone-input{width: 160px;border-bottom-right-radius: 50px;border-top-right-radius:50px;border:none;}
+.register-code-box{margin-top: 15px;display: flex;flex-direction: row;align-items: center;background-color: #f8f8f8;border-radius: 50px;}
+.register-code-input{width: 110px;border-bottom-left-radius: 50px;border-top-left-radius:50px;border:none;}
+.register-vertical-line{width: 1px;height: 20px;background: #999999;}
+.register-pwd-input{width: 201px;margin-top: 15px;background-color: #f8f8f8;border-radius: 50px;border:none;}
+.register-box-btn{width: 201px;margin-top: 30px;}
+.center-body{position:absolute;width:100%;height:100%;display: flex;flex-direction: column;justify-content: center;align-items: center;z-index: 1;}
+.center-title{font-size: 70px;color: white;font-weight: bold;}
+.center-subtitle{font-size: 13px;color:white;}
+.taste-btn{padding: 4px 30px;background-color: black;border-radius:20px;color: white;font-size: @btnFontSize;margin-top: 80px;}
+.footer-container{position: fixed;bottom: 0;width: 100%;}
+.floating-menu-container{display: flex;flex-direction: column;align-items:center;position: absolute;top: 55px;right: 120px;width: 120px;}
+.avatar-container{width: 40px;height: 40px;border-radius: 40px;}
+.avatar-image{width: 40px;height: 40px;border-radius: 40px;}
+.avatar-placeholder{width: 40px;height: 40px;background: black;border-radius: 40px;}
+.floating-menu{margin-top:10px;background: white;border-radius: 10px;padding: 5px 10px;display: none;width: 120px;}
+.floating-menu-open{display: flex;flex-direction: column;align-items: center;}
+.menu-item{padding: 4px 0;font-size: 14px;color: black;cursor:pointer;}
+.account-dialog-box{background: white;border-radius: 10px;padding: 100px 180px;display: flex;flex-direction: column;align-items: center;position: relative;}
+.set-avatar-image{width: 60px;height: 60px;border-radius: 60px;}
+.default-avatar{background: url("../images/smartdetect/account/set_avatar.png");background-size: contain;}
+.avatar-upload-btn{border-radius: 20px;width: 100px;margin-top: 12px;margin-bottom: 20px;color: #666666;background: white;border-color: #999999;}
+.avatar-upload-btn.ant-btn:hover, .avatar-upload-btn.ant-btn:focus, .avatar-upload-btn.ant-btn:active, .avatar-upload-btn.ant-btn.active {text-decoration: none;color: #666666;background: white;border-color: #999999;}
+.account-nick-box{margin-top: 20px;display: flex;flex-direction: row;align-items: center;}
+.account-nick-label{color: #333333;font-size: 14px;width: 80px;}
+.account-nick-input{width: 200px;border-radius: 50px;}
+.account-nick-save-btn{margin-left: 20px;width: 100px;}
+.account-phone-box{margin-top: 20px;display: flex;flex-direction: row;align-items: center;}
+.account-phone-label{color: #333333;font-size: 14px;width: 80px;}
+.account-phone-input{width: 200px;border-radius: 50px;}
+.account-phone-btn{margin-left: 20px;width: 100px;}
+.account-pwd-box{margin-top: 20px;display: flex;flex-direction: row;align-items: center;}
+.account-pwd-label{color: #333333;font-size: 14px;width: 80px;}
+.account-pwd-input .ant-input{width: 200px;border-radius: 50px;}
+.account-pwd-btn{margin-left: 20px;width: 100px;}
+.icon-account-close{position: absolute;right: 20px;top:20px;font-size: 28px;color: #666666;}
+.score-record-dialog-box{background: white;border-radius: 10px;display: flex;flex-direction: column;position: relative;}
+.score-record-query-box{margin-top: 15px;display: flex;flex-direction: row;align-items: center;}
+.score-record-query-label{color: #333333;font-size: 14px;width: 80px;}
+.score-record-query-input{width: 200px;border-radius: 50px;margin-right: 20px;}
+.score-record-btn-box{margin-top: 20px;margin-bottom:20px;}
+.score-record-query-btn{width: 100px;margin-right: 20px;}
+.score-record-reset-btn{width: 100px;}
+.score-record-query-line{width: 100%;height: 1px;background-color: #eeeeee;}
+.icon-score-record-close{position: absolute;right: 20px;top:20px;font-size: 28px;color: #666666;}
+.score-detail-dialog-box{background: white;border-radius: 10px;display: flex;flex-direction: column;position: relative;width: 1000px;min-height: 500px;}
+.score-detail-title{font-size: 26px;color: black;font-weight: bold;}
+.score-detail-certnum{font-size: 12px;color: #666666;}
+.score-detail-content{display: flex;flex-direction: row;flex:1;}
+.score-detail-img-front-box{width: 300px;height: 400px;border: @themeColor 1px dashed;background: #F4F2FF;margin-right: 20px;margin-top: 5px;}
+.score-detail-img-front{width: 300px;height: 400px;}
+.score-detail-img-back-box{width: 300px;height: 400px;border: @themeColor 1px dashed;background: #F4F2FF;margin-right: 20px;margin-top: 5px;}
+.score-detail-img-back{width: 300px;height: 400px;}
+.score-detail-info-box{display: flex;flex-direction: column;}
+.score-detail-info-nav{font-size: 18px;font-weight: bold;color: black;}
+.score-detail-info-nav-margin{margin-top: 30px;}
+.score-detail-info-line{flex:1;width: 300px;height: 1px;background: #eeeeee;margin-bottom: 10px;margin-top: 4px;}
+.score-detail-info-item{display: flex;flex-direction: row;align-items: center;justify-content: space-between;flex:1;width: 300px;}
+.score-detail-info-label{font-size: 14px;color: #666666;}
+.score-detail-info-value{font-size: 14px;color: #666666;}
+.score-detail-btn{margin-top: 30px;width: 150px;align-self: center;}
+.modifypwd-box{display: flex;flex-direction: column;align-items: center;}
+.modifypwd-item-box{display: flex;flex-direction: row;align-items: center;margin-top: 20px;}
+.modifypwd-label{font-size: 14px;color: black;margin-right: 20px;width: 80px;text-align: right;}
+.modifypwd-input .ant-input{width: 200px;border-radius: 50px;}
+.modifypwd-btn-box{display: flex;flex-direction: row;align-items: center;justify-content: center;margin-top:20px;}
+.modifypwd-confirm-btn{width: 100px;}
+.modify-phone-box{display: flex;flex-direction: column;align-items: center;}
+.modify-phone-phone-box{margin-top: 15px;display: flex;flex-direction: row;align-items: center;background-color: #f8f8f8;border-radius: 50px;}
+.modify-phone-area{width: 40px;display: flex;align-items: center;justify-content: center;}
+.modify-phone-input{width: 160px;border-bottom-right-radius: 50px;border-top-right-radius:50px;border:none;}
+.modify-phone-code-box{margin-top: 15px;display: flex;flex-direction: row;align-items: center;background-color: #f8f8f8;border-radius: 50px;}
+.modify-phone-code-input{width: 110px;border-bottom-left-radius: 50px;border-top-left-radius:50px;border:none;}
+.modify-phone-vertical-line{width: 1px;height: 20px;background: #999999;}
+.modify-phone-btn-box{display: flex;flex-direction: row;align-items: center;justify-content: center;margin-top: 20px;}
+.modify-phone-confirm-btn{width: 100px;}
+.wrapdraw-box{width: 100%;display: flex;flex-direction: column;align-items: center;}
+.icon-login-close{position: absolute;right: 20px;top:20px;font-size: 16px;color: #666666;}

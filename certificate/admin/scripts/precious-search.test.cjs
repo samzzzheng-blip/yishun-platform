@@ -1,0 +1,43 @@
+const fs = require('fs');
+const vm = require('vm');
+const assert = require('assert');
+const babel = require('babel-core');
+const requests = [];
+function Component(props) { this.props = props; }
+Component.prototype.setState = function(next, callback) { this.state = Object.assign({}, this.state, next); if (callback) callback(); };
+const React = { Component, createElement: (type, props, ...children) => ({ type, props: props || {}, children }) };
+const antd = { Form: { create: () => C => C, Item: 'FormItem' }, Modal: {}, Layout: { Content: 'Content' }, Select: { Option: 'Option' }, Input: 'Input' };
+const source = fs.readFileSync('app/pages/managerCenter/preciousManage/index.js', 'utf8');
+const code = babel.transform(source, { babelrc: false, presets: ['env', 'react', 'stage-0'], plugins: ['transform-decorators-legacy'] }).code;
+const sandbox = { exports: {}, require: name => {
+  if (name === 'react') return React;
+  if (name === 'antd') return antd;
+  if (name === '@http') return { getData: (route, params) => { requests.push({route,params}); return Promise.resolve({list:[],totalCount:0}); } };
+  if (name.includes('permission')) return {hasUpdatePermission:()=>false,hasDeletePermission:()=>false,hasAddPermission:()=>false,hasExportPermission:()=>false};
+  if (name === '@tableList') return 'TableList';
+  return {};
+}, localStorage: { getItem: () => '' } };
+vm.runInNewContext(code, sandbox);
+let fields = { key: ' 松冈由贵 ', status: '0' };
+const page = new sandbox.exports.default({form:{getFieldValue:k=>fields[k],getFieldDecorator:()=>x=>x}});
+page.state.searchKey.pageNo=12;
+page.handleSearch({preventDefault(){}});
+assert.equal(requests.at(-1).params.keywords,'松冈由贵');
+assert.equal(requests.at(-1).params.status,'0');
+assert.equal(requests.at(-1).params.page,1);
+page.state.totalCount=61051;
+page.pageChange(200);
+assert.equal(requests.at(-1).params.page,200);
+assert.equal(requests.at(-1).params.keywords,'松冈由贵');
+const count=requests.length;
+[0,-1,6107,NaN,1.2].forEach(n=>page.pageChange(n));
+assert.equal(requests.length,count);
+page.pageSizeChange(200,20);
+assert.equal(requests.at(-1).params.page,1);
+assert.equal(requests.at(-1).params.pageSize,20);
+fields={}; page.handleSearch({preventDefault(){}});
+assert.equal(requests.at(-1).params.keywords,undefined);
+function find(node,type) { if(!node||typeof node!=='object')return null; if(node.type===type)return node; for(const child of node.children||[]) {const hit=find(child,type);if(hit)return hit;} return null; }
+assert.equal(find(page.render(),'TableList').props.showQuickJumper,true);
+assert.equal(find(page.render(),'Input').props['aria-label'],'证书编号或签名人姓名');
+console.log('PASS: name search, status, reset, page jump bounds, page size and quick-jumper wiring');

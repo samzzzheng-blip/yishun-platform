@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "jobId": 5,
+  "checks": [
+    "login",
+    "photo upload",
+    "mobile intake",
+    "save",
+    "score",
+    "confirm",
+    "QR download",
+    "print PDF",
+    "finished photo",
+    "reload persistence",
+    "no mobile overflow",
+    "unauthenticated rejection",
+    "invalid image rejection",
+    "stale version rejection",
+    "no JavaScript errors"
+  ]
+}

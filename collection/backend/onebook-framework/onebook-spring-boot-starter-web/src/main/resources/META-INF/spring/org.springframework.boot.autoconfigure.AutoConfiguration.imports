@@ -1,0 +1,7 @@
+com.techtron.onebook.framework.apilog.config.OnebookApiLogAutoConfiguration
+com.techtron.onebook.framework.jackson.config.OnebookJacksonAutoConfiguration
+com.techtron.onebook.framework.swagger.config.OnebookSwaggerAutoConfiguration
+com.techtron.onebook.framework.web.config.OnebookWebAutoConfiguration
+com.techtron.onebook.framework.xss.config.OnebookXssAutoConfiguration
+com.techtron.onebook.framework.banner.config.OnebookBannerAutoConfiguration
+com.techtron.onebook.framework.encrypt.config.OnebookApiEncryptAutoConfiguration

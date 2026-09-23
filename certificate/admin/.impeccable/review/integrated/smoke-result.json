@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "jobId": 17,
+  "checks": [
+    "original login and return path",
+    "shared header and permission-derived menus",
+    "dirty navigation guard",
+    "read-only role UI",
+    "old grading link redirect",
+    "official rate list integration",
+    "preserved import/range/export actions",
+    "logout session cleanup",
+    "photo upload",
+    "mobile intake",
+    "save",
+    "score",
+    "confirm",
+    "QR download",
+    "print PDF",
+    "finished photo",
+    "reload persistence",
+    "no mobile overflow",
+    "unauthenticated rejection",
+    "invalid image rejection",
+    "stale version rejection",
+    "no JavaScript errors"
+  ]
+}

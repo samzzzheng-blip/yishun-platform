@@ -1,0 +1,2 @@
+com.techtron.onebook.framework.redis.config.OnebookRedisAutoConfiguration
+com.techtron.onebook.framework.redis.config.OnebookCacheAutoConfiguration

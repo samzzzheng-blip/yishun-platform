@@ -1,0 +1,81 @@
+<!--pages/account/aboutus/aboutus.wxml-->
+<!-- 搜索结果页 -->
+<wxs module="util" src="../../utils/util.wxs" />
+<view class='container'>
+  <view class='page-content'>
+    <view class="column-center">
+      <view class="search-input-container">
+        <view class="topline" />
+        <view class="searchContainer">
+          <input class="search-input" value="{{ inputCert }}" placeholder="输入查询码" placeholder-class="input-placeholder" bindconfirm="search" bindinput="bindCertInput" maxlength="20" />
+          <image bindtap="search" class="searchImg" src="../../images/search.png" mode="aspectFit" />
+        </view>
+      </view>
+      <view class="row-center" style="margin-top:40rpx;" wx:if="{{ certInfo != null }}">
+        <image class="picture" src="{{ util.getHttpsUrl(certInfo.imgUrl) }}" bindtap="showImage" data-url="{{ util.getHttpsUrl(certInfo.imgUrl) }}" mode="aspectFit" />
+        <view>
+          <text class="textStyle">证书编码：{{ inputCert }}</text>
+          <view />
+          <block wx:if="{{certInfo.rateName}}">
+            <text class="textStyle">名称：{{ certInfo.rateName }}</text>
+            <view />
+            <text class="textStyle">表面：{{ certInfo.surface }}</text>
+            <view />
+            <text class="textStyle">居中：{{ certInfo.center }}</text>
+            <view />
+            <text class="textStyle">边缘：{{ certInfo.edge }}</text>
+            <view />
+            <text class="textStyle">角落：{{ certInfo.corner }}</text>
+            <view />
+            <text class="textStyle">总评分：{{ certInfo.score }}</text>
+            <view />
+          </block>
+          <block wx:else>
+            <text wx:if="{{certInfo.signer}}" class="textStyle">姓名：{{ certInfo.signer }}</text>
+            <view />
+            <text class="textStyle">载体：{{ certInfo.itemType }}</text>
+            <view />
+            <block wx:if="{{certInfo.signer}}">
+              <text wx:if="{{certInfo.publishTime}}" class="textStyle">时间：{{ certInfo.publishTime }}</text>
+              <view />
+              <text wx:if="{{certInfo.publishCity}}" class="textStyle">地点：{{ certInfo.publishCity }}</text>
+              <view />
+              <text wx:if="{{certInfo.publishActivity}}" class="textStyle">卡品：{{ certInfo.publishActivity }}</text>
+              <view />
+              <text wx:if="{{certInfo.publishSign}}" class="textStyle">亲笔签名：{{ certInfo.publishSign }}</text>
+              <view />
+            </block>
+            <block wx:else>
+              <text class="textStyle">角色名称：{{ certInfo.roleName }}</text>
+              <view />
+              <text class="textStyle">动漫名称：{{ certInfo.cartoonName }}</text>
+              <view />
+              <text class="textStyle">原作者：{{ certInfo.author }}</text>
+              <view />
+              <text class="textStyle">制作公司：{{ certInfo.company }}</text>
+              <view />
+            </block>
+            <text class="textStyle" wx:if="{{ !util.isEmpty(certInfo.score) }}">评级：{{ certInfo.score }}</text>
+          </block>
+
+        </view>
+      </view>
+      <view class="row-center" style="position:relative" wx:if="{{ null != certInfo && (!util.isEmpty(certInfo.evidenceImg)||!util.isEmpty(certInfo.evidenceVideoImgUrl)) }}">
+        <view class="evidenceBox" />
+        <view class="evidenceContainer">
+          <view class="row-alignitem-center">
+            <image class="resultIcon" src="../../images/result.png" mode="aspectFit" />
+            <text class="resultLabelStyle">备注</text>
+          </view>
+          <view class="row-alignitem-center">
+            <image wx:if="{{ !util.isEmpty(certInfo.evidenceImg) }}" class="evidenceImg" bindtap="showImage" data-url="{{ util.getHttpsUrl(certInfo.evidenceImg) }}" src="{{ util.getHttpsUrl(certInfo.evidenceImg) }}" mode="aspectFit" />
+            <view class="row-center" wx:if="{{ !util.isEmpty(certInfo.evidenceVideoImgUrl) }}" bindtap="playVideo" data-url="{{ util.getHttpsUrl(certInfo.evidenceVideo) }}">
+              <image class="evidenceImg" src="{{ util.getHttpsUrl(certInfo.evidenceVideoImgUrl) }}" mode="aspectFit" />
+              <image class="playIcon" src="../../images/icon_video_play.png" mode="aspectFit" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,3 @@
+com.techtron.onebook.framework.datasource.config.OnebookDataSourceAutoConfiguration
+com.techtron.onebook.framework.mybatis.config.OnebookMybatisAutoConfiguration
+com.techtron.onebook.framework.translate.config.OnebookTranslateAutoConfiguration

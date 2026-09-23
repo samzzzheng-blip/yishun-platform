@@ -1,0 +1,21 @@
+[
+  "certificate/admin/scripts/batch-number-smoke.cjs",
+  "certificate/admin/scripts/private-workflow-smoke.cjs",
+  "certificate/admin/scripts/template-workflow-smoke.cjs",
+  "certificate/backend/src/main/resources/application-dev.yml",
+  "certificate/backend/src/main/resources/application-prod.yml",
+  "certificate/backend/src/main/resources/sms.properties",
+  "certificate/backend/src/test/java/com/kiss/yishun/workflow/WorkflowSandbox.java",
+  "collection/admin/.env",
+  "collection/admin/pnpm-lock.yaml",
+  "collection/admin/src/utils/jsencrypt.ts",
+  "collection/admin/src/views/ai/utils/constants.ts",
+  "collection/admin/src/views/mp/components/wx-location/main.vue",
+  "collection/backend/onebook-framework/onebook-spring-boot-starter-web/src/test/java/com/techtron/onebook/framework/encrypt/ApiEncryptTest.java",
+  "collection/backend/onebook-module-app/src/main/java/com/techtron/onebook/module/app/service/yikoujia/YikoujiaServiceImpl.java",
+  "collection/backend/onebook-server/src/main/resources/application-dev.yaml",
+  "collection/backend/onebook-server/src/main/resources/application-local.yaml",
+  "collection/backend/onebook-server/src/main/resources/application.yaml",
+  "collection/backend/sql/mysql/pay-2025-07-27传播违法.sql",
+  "collection/backend/sql/mysql/ruoyi-vue-pro.sql"
+]

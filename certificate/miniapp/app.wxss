@@ -1,0 +1,203 @@
+@import './wxss/common.wxss';
+page{
+  background-color: #ffffff;
+  font-family: 'webfont';
+}
+/**app.wxss**/
+.container {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  font-size: 13px;
+  font-weight: normal;
+  color: #333333;
+  background-color: #ffffff;
+  overflow: auto;
+}
+ /* 横向布局 */
+.flex-row{ 
+  display: flex;
+  flex-direction:row;
+}
+/* 纵向显示 */
+.flex-wrp{
+  display: flex;
+  flex-direction:column;
+}
+/* 紫色按钮 */
+.purple-btn{
+  background-image: linear-gradient(to right, #8E00FF, #7E00FF);
+  color: #fff;
+  font-weight: normal;
+}
+/* 100%按钮 */
+.wide-btn{
+  width: 100% !important;
+  margin: 30rpx 0;
+  height: 96rpx;
+  line-height: 60rpx;
+  font-size: 32rpx;
+  border-radius: 14rpx;
+}
+/* 禁用按钮 */
+.gray-btn{
+  background-color: #CCCCCC;
+  color: #fff;
+  font-weight: normal;
+}
+.white-btn{
+  background-color: #fff;
+  color: #999999;
+  font-weight: normal;
+  border: 1rpx solid #ccc;
+}
+/* 底部按钮空白背景 */
+.bottom-block{
+  height: 130rpx;
+}
+/* flex垂直居中 */
+.vertical{
+  align-items: center;
+}
+
+/* flex水平居中 */
+.horizontal{
+  justify-content: center;
+  text-align: center;
+}
+/* flex左对齐 */
+.flex-left{
+  justify-content: flex-start;
+}
+.flex-right {
+  justify-content: flex-end;
+}
+.space-bet{
+  justify-content: space-between;
+}
+image{
+  width: 100%;
+  height: 100%;
+}
+.weui-cells:after {
+  border-bottom: none;
+}
+.weui-cells:before {
+  border-top: none;
+}
+.weui-cell {
+  font-size: 28rpx;
+}
+.modal-title{
+  font-size: 36rpx;
+  margin: 40rpx 0 20rpx 0;
+}
+.modal-content{
+  color: #666;
+  margin-bottom: 60rpx;
+  font-size: 28rpx;
+}
+.modal-remarks{
+  color: #666;
+  position: absolute;
+  bottom: 50rpx;
+  font-size: 11pt;
+}
+.modal-remarks label{
+  color: #7E00FF;
+}
+/* 消息列表无消息时 */
+.nonenet{
+  height: 100vh;
+  position: relative;
+  bottom: 160rpx;
+  font-size: 32rpx;
+}
+.nonenet .nonenet-logo{
+  height: 200rpx;
+}
+.nonenet label{
+  display: inline-block;
+  margin: 60rpx;
+  color: #999999;
+}
+.nonenet button{
+  border: 1px solid #CCCCCC;
+  color: #7E00FF;
+  background-color: #F5F5F5;
+  font-weight: normal;
+}
+button[size='mini']{
+  font-size: 32rpx !important;
+  width: 192rpx !important;
+  height: 72rpx !important;
+  border-radius: 7px !important;
+  line-height: 38rpx !important;
+}
+.top-back {
+  display: flex;
+  height: 160rpx;
+  background-color: #7e00ff;
+}
+.home-class {
+  padding: 0 20rpx;
+  position: relative;
+  top: -80rpx;
+}
+.oneline-text{
+  display: inline-block;
+  white-space: nowrap; 
+  width: 100%; 
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+.twoline-text{
+	word-break:break-all;
+	display:-webkit-box;
+	-webkit-line-clamp:2;
+	-webkit-box-orient:vertical;
+	overflow:hidden;
+}
+button {
+  padding: 8px 0 !important;
+}
+.showsku{
+  background-color: #fff;
+  border-radius: 20rpx;
+}
+.payskubg {
+  height: 47vh;
+}
+.jiance-text{
+  text-align: center;
+  color: #999999;
+  font-size: 24rpx;
+}
+.pay-sku-title{
+  font-size: 13pt;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.break-text{
+  word-break: break-all;
+}
+.detail-btn {
+  width: 100% !important;
+  margin-top: 20rpx 5%;
+  height: 96rpx;
+  line-height: 64rpx;
+}
+.page-content {
+  height: 100vh;
+  overflow: scroll;
+}
+.column-center-container {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

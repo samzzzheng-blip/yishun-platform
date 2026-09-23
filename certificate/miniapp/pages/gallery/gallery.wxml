@@ -1,0 +1,5 @@
+<view class='container'>
+  <view class='page-content'>
+    <image src="{{ url }}" class="imageView" mode="aspectFit" />
+  </view>
+</view>
